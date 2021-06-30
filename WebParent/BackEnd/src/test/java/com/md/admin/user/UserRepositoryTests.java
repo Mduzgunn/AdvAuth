@@ -23,12 +23,26 @@ public class UserRepositoryTests {
     private TestEntityManager entityManager;
 
     @Test
-    public void testCreateUser(){
+    public void testCreateNewUserWithOneRole(){
         Role roleAdmin  = entityManager.find(Role.class, 2);
         User Mdzgn = new User("Mdzgn@test.com", "şifre", "melih", "düzgün");
         Mdzgn.addRole(roleAdmin);
 
         User savedUser = repository.save(Mdzgn);
+        assertThat(savedUser.getId()).isGreaterThan(0);
+    }
+
+    @Test
+    public void testCreateNewUserWithManyRole(){
+        User Mdzgn = new User("Mdzgn@testgmail.com", "şifre2", "ahmet", "düzgün");
+        Role roleEditor = new Role(5);
+        Role roleAsistan = new Role(6);
+
+        Mdzgn.addRole(roleEditor);
+        Mdzgn.addRole(roleAsistan);
+
+        User savedUser = repository.save(Mdzgn);
+
         assertThat(savedUser.getId()).isGreaterThan(0);
     }
 }

@@ -1,6 +1,7 @@
 package com.md.common.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 
 @Entity
@@ -18,6 +19,10 @@ public class Role {
     private String description;
 
     public Role() {
+    }
+
+    public Role(Integer id) {
+        this.id = id;
     }
 
     public Role(String name) {
@@ -53,4 +58,13 @@ public class Role {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return Objects.equals(id, role.id);
+    }
+
 }
