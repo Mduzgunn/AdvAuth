@@ -8,7 +8,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.InstanceOfAssertFactories.LIST;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -23,6 +26,14 @@ public class RoleRepositoryTests {
          Role savedRole = repository.save(roleAdmin);
          assertThat(savedRole.getId()).isGreaterThan(0);
      }
+
+     @Test
+    public void testCreateRoles(){
+         Role roleAsistan = new Role("asistan", "intern");
+         Role roleEditor= new Role("editor", "junior admin");
+         repository.saveAll(List.of(roleAsistan,roleEditor));
+     }
+
 
 
 }
