@@ -67,4 +67,10 @@ public class Role {
         return Objects.equals(id, role.id);
     }
 
+    @Override
+    public String toString() {
+        return "Role{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
