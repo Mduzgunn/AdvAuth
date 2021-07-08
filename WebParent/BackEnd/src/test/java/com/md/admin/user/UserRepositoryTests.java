@@ -36,8 +36,8 @@ public class UserRepositoryTests {
 
     @Test
     public void testCreateNewUserWithManyRole(){
-        User Mdzgn = new User("Mdzgn@testgmail.com", "şifre2", "ahmet", "düzgün");
-        Role roleEditor = new Role(6);
+        User Mdzgn = new User("Mdzgn@test2gmail.com", "şifre2", "ahmet", "düzgün");
+        Role roleEditor = new Role(2);
         Role roleAsistan = new Role(5);
 
         Mdzgn.addRole(roleEditor);
@@ -72,7 +72,7 @@ public class UserRepositoryTests {
 
     @Test
     public void testUpdateUserRoles(){
-        User userMd = repository.findById(7).get();
+        User userMd = repository.findById(10).get();
         Role roleAsistan = new Role(5);
         Role roleAdmin= new Role(2);
 

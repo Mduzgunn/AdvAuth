@@ -29,7 +29,6 @@ public class User {
 
     private boolean enabled;
 
-
     @ManyToMany
     @JoinTable(
             name = "users_roles",
@@ -50,8 +49,6 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
 
     public Integer getId() {
         return id;
