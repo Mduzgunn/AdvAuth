@@ -8,4 +8,7 @@ import org.springframework.data.repository.query.Param;
 public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("select u from User u WHERE  u.email = :email")
     public User getUserByEmail(@Param("email") String email);
+
+    //delete fonksiyonu için
+    public Long countById(Integer id);
 }
