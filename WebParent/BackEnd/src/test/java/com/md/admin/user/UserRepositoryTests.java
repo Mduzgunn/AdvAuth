@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -101,5 +102,17 @@ public class UserRepositoryTests {
         Long countById=repository.countById(id);
 
         assertThat(countById).isNotNull().isGreaterThan(0);
+    }
+
+    @Test
+    public void testDisableUser(){
+        Integer id = 14;
+        repository.updateEnabledStatus(id, false);
+    }
+
+    @Test
+    public void testEnableUser(){
+        Integer id = 14;
+        repository.updateEnabledStatus(id, true);
     }
 }

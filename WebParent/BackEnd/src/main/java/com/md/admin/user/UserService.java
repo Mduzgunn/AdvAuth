@@ -7,11 +7,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
+@Transactional
 public class UserService {
     @Autowired
     private UserRepository userRepository;
@@ -87,5 +89,8 @@ public class UserService {
         }
 
         userRepository.deleteById(id);
+    }
+    public void updateUserEnabledStatus(Integer id, boolean enabled){
+        userRepository.updateEnabledStatus(id, enabled);
     }
 }
