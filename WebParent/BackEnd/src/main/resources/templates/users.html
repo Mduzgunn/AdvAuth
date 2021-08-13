@@ -44,7 +44,7 @@
     </div>
 
     <div>
-        <table class="table table-bordered table-striped table-hover table-responsive-xl">
+        <table class="table table-bordered table-striped table-hover table-responsive-xl table-dark" >
             <thead class="thead-dark">
             <tr>
                 <th>
@@ -115,6 +115,36 @@
     </div>
     <div class="text-center m-1" th:unless="${totalItems > 0}">
         <span>No user found</span>
+    </div>
+
+    <div>
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li th:class="${currentPage > 1 ? 'page-item': 'page-item disabled'}">
+                    <a class="page-link" th:href="@{/users/page/1}">First</a>
+                </li>
+
+                <li th:class="${currentPage > 1 ? 'page-item': 'page-item disabled'}">
+                    <a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1}}">Prev</a>
+                </li>
+
+                <li th:class="${currentPage != i ? 'page-item': 'page-item active'}"
+                    th:each="i : ${#numbers.sequence(1, totalPage)}">
+                    <a class="page-link" th:href="@{'/users/page/' + ${i}}">[[${i}]]</a>
+                </li>
+
+                <li th:class="${currentPage < totalPage ? 'page-item': 'page-item disabled'}">
+                    <a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1}}">Next</a>
+                </li>
+
+                <li th:class="${currentPage < totalPage ? 'page-item': 'page-item disabled'}">
+                    <a class="page-link" th:href="@{'/users/page/' + ${totalPage}}">Last</a>
+                </li>
+
+
+
+            </ul>
+        </nav>
     </div>
 
 

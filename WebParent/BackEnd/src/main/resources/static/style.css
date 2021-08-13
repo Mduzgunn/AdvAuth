@@ -2,3 +2,11 @@
 *.icon-silver {color: silver}
 *.icon-green {color: springgreen}
 *.icon-dark {color: gray}
+
+.active a{
+    background-color: #8D86C9 !important;
+}
+body{
+    background-color: #F7EBE8;
+}
+.table-dark
