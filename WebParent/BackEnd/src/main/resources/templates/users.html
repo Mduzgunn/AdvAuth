@@ -44,7 +44,7 @@
     </div>
 
     <div>
-        <table class="table table-bordered table-striped table-hover table-responsive-xl table-dark" >
+        <table class="table table-bordered table-striped table-hover table-responsive-xl table-dark">
             <thead class="thead-dark">
             <tr>
                 <th>
@@ -57,7 +57,17 @@
                     E-mail
                 </th>
                 <th>
-                    First Name
+                    <a th:if="${sortField != 'firstName'}" class="text-white"
+                       th:href="@{'/users/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${sortDir}}">
+                        First Name
+                    </a>
+
+                    <a th:if="${sortField == 'firstName'}" class="text-white"
+                       th:href="@{'/users/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
+                        First Name
+                    </a>
+                    <span th:if="${sortField == 'firstName'}"
+                          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>
                 </th>
                 <th>
                     Last Name
@@ -140,7 +150,6 @@
                 <li th:class="${currentPage < totalPage ? 'page-item': 'page-item disabled'}">
                     <a class="page-link" th:href="@{'/users/page/' + ${totalPage}}">Last</a>
                 </li>
-
 
 
             </ul>
