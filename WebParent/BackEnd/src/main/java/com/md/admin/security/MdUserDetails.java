@@ -62,4 +62,15 @@ public class MdUserDetails implements UserDetails {
     public boolean isEnabled() {
         return user.isEnabled();
     }
+
+    public String getFullName(){
+        return this.user.getFirstName() + " " + this.user.getLastName();
+    }
+
+    public String getPhotosImagePath() {
+        if(this.user.getId()==null||this.user.getPhotos() ==null) return "/images/pic.png";
+
+        return "/user-photos/"+this.user.getId() +"/" +this.user.getPhotos();
+    }
+
 }
