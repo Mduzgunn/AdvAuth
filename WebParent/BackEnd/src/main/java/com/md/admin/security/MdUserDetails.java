@@ -68,7 +68,7 @@ public class MdUserDetails implements UserDetails {
     }
 
     public String getPhotosImagePath() {
-        if(this.user.getId()==null||this.user.getPhotos() ==null) return "/images/pic.png";
+        if(this.user.getId()==null||this.user.getPhotos() ==null) return "/images/default.png";
 
         return "/user-photos/"+this.user.getId() +"/" +this.user.getPhotos();
     }
