@@ -16,7 +16,9 @@
 </head>
 <body>
 
-
+    <div th:fragment="footer" class="text-center m-3">
+        <p>MD Control Panel - Copyright &copy; MD</p>
+    </div>
 
     <th th:fragment="column_link(fieldName, columnLabel, removeTag)" th:remove="${removeTag}">
         <a class="text-white"

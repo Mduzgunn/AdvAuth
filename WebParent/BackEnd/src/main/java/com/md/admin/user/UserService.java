@@ -29,6 +29,10 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    public User getByEmail(String mail){
+        return userRepository.getUserByEmail(mail);
+    }
+
     public List<User> listAll(){
         return (List<User>) userRepository.findAll();
     }
