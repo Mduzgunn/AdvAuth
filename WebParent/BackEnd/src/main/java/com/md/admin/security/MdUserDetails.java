@@ -67,6 +67,14 @@ public class MdUserDetails implements UserDetails {
         return this.user.getFirstName() + " " + this.user.getLastName();
     }
 
+    public void setFirstName(String firstName) {
+        this.user.setFirstName(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        this.user.setLastName(lastName);
+    }
+
     public String getPhotosImagePath() {
         if(this.user.getId()==null||this.user.getPhotos() ==null) return "/images/default.png";
 
