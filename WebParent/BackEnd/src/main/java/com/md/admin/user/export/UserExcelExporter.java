@@ -1,7 +1,6 @@
 package com.md.admin.user.export;
 
 import com.md.common.entity.User;
-import com.md.admin.user.AbstractExporter;
 
 
 import java.io.IOException;

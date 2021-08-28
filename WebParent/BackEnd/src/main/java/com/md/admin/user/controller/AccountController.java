@@ -1,7 +1,8 @@
-package com.md.admin.user;
+package com.md.admin.user.controller;
 
 import com.md.admin.FileUploadUtil;
 import com.md.admin.security.MdUserDetails;
+import com.md.admin.user.UserService;
 import com.md.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -29,7 +30,7 @@ public class AccountController {
         User user = service.getByEmail(email);
         model.addAttribute("user", user);
 
-        return "account_form";
+        return "users/account_form";
 
     }
 

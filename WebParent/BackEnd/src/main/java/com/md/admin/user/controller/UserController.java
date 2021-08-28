@@ -1,6 +1,8 @@
-package com.md.admin.user;
+package com.md.admin.user.controller;
 
 import com.md.admin.FileUploadUtil;
+import com.md.admin.user.UserNotFoundException;
+import com.md.admin.user.UserService;
 import com.md.admin.user.export.UserExcelExporter;
 import com.md.common.entity.Role;
 import com.md.common.entity.User;
@@ -66,7 +68,7 @@ public class UserController {
         model.addAttribute("keyword", keyword);
 
 
-        return "users";
+        return "users/users";
     }
 
     @GetMapping("/users/new")
@@ -80,7 +82,7 @@ public class UserController {
         model.addAttribute("pageTitle", "Create new user");
 
 
-        return "user_form";
+        return "users/user_form";
     }
 
     @PostMapping("/users/save")
@@ -121,8 +123,8 @@ public class UserController {
             model.addAttribute("user", user);
             model.addAttribute("pageTitle", "Edit user(ID: " + id + ")");
 
+            return ("users/user_form");
 
-            return ("user_form");
         } catch (UserNotFoundException exception) {
             redirectAttributes.addFlashAttribute("message", exception.getMessage());
             return "redirect:/users";
