@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <body>
-
-
     <div th:fragment="menu">
         <form th:action="@{/logout}" method="post" th:hidden="true" name="LogoutForm">
             <input type="submit">
