@@ -41,15 +41,13 @@
             <thead class="thead-dark">
             <tr>
                 <th class="hideable-column">
-                <th th:replace="fragments :: column_link('id', 'User ID', 'tag')"/>
-                </th>
+                <th th:replace="fragments :: column_link('id', 'User ID', 'tag')"></th>
 
                 <th>
                     Photos
                 </th>
                 <th class="hideable-column">
-                <th th:replace="fragments :: column_link('email', 'E-mail', 'tag')"/>
-                </th>
+                <th th:replace="fragments :: column_link('email', 'E-mail', 'tag')"></th>
                 <th th:replace="fragments :: column_link('firstName', 'First Name', 'none')"></th>
                 <th th:replace="fragments :: column_link('lastName', 'Last Name', 'none')"></th>
                 <th>
@@ -73,23 +71,11 @@
                 <td>[[${user.lastName}]]</td>
                 <td>[[${user.roles}]]</td>
                 <td>
-                    <a th:if="${user.enabled==true}" class="fas fa-check-circle fa-2x icon-green"
-                       th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-                       title="Disable user"></a>
-                    <a th:if="${user.enabled==false}" class="fas fa-check-circle fa-2x icon-dark"
-                       th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-                       title="Enable user"></a>
-
+                    <div th:replace="fragments :: user_status"></div>
                 </td>
 
                 <td>
-                    <a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}} "
-                       title="Edit this user"></a>
-                    &nbsp;
-                    <a class="fas fa-trash fa-2x icon-dark link-delete"
-                       th:href="@{'/users/delete/' + ${user.id}}"
-                       th:userId="${user.id}"
-                       title="Delete this user"></a>
+                    <div th:replace="fragments :: user_actions"></div>
                 </td>
             </tr>
             </tbody>
@@ -98,30 +84,17 @@
 
     <div class="less-details">
         <div th:each="user : ${listUsers}" class="row m-1">
-            <div class="col">
-                <span th:if="${user.photos==null}" class="fas fa-portrait fa-3x icon-dark"></span>
-                <img th:if="${user.photos !=null}" th:src="@{${user.photosImagePath}}"
-                     style="width: 100px">
+            <div class="col-4">
+                <div th:replace="fragments :: user_photos"></div>
             </div>
             <div class="col-8">
                 <div>[[${user.fullName}]]</div>
                 <div>[[${user.roles}]]</div>
-            </div>
-            <div class="mt-2">
-                <a th:if="${user.enabled==true}" class="fas fa-check-circle fa-2x icon-green"
-                   th:href="@{'/users/' + ${user.id} + '/enabled/false'}"
-                   title="Disable user"></a>
-                <a th:if="${user.enabled==false}" class="fas fa-check-circle fa-2x icon-dark"
-                   th:href="@{'/users/' + ${user.id} + '/enabled/true'}"
-                   title="Enable user"></a>
-                &nbsp;
-                <a class="fas fa-edit fa-2x icon-green" th:href="@{'/users/edit/' + ${user.id}} "
-                   title="Edit this user"></a>
-                &nbsp;
-                <a class="fas fa-trash fa-2x icon-dark link-delete"
-                   th:href="@{'/users/delete/' + ${user.id}}"
-                   th:userId="${user.id}"
-                   title="Delete this user"></a>
+                <div class="mt-2">
+                    <div th:replace="fragments :: user_status"></div>
+                    &nbsp;
+                    <div th:replace="fragments :: user_actions"></div>
+                </div>
             </div>
             <div>&nbsp;</div>
         </div>
@@ -184,11 +157,8 @@
         </div>
     </div>
 
-    <div class="text-center">
-        <p>Auth Control Panel - Copyright &copy; MD</p>
-    </div>
+    <div th:replace="fragments :: footer"></div>
 
-    </div>
     <script type="text/javascript">
         $(document).ready(function () {
             $(".link-delete").on("click", function (e) {
@@ -203,7 +173,7 @@
         });
 
         function clearFilter() {
-            window.location = "/mdAdmin/users";
+            window.location = "[[@{/users}]]";
         }
     </script>
 </body>

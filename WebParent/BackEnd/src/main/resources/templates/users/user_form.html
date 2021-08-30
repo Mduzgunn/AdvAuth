@@ -117,6 +117,7 @@
 </div>
 
 <script type="text/javascript">
+    moduleURL = "[[@{/users}]]";
 
     function checkEmailUnique(form) {
         url = "[[@{/users/check_email}]]";
@@ -126,9 +127,9 @@
         params = {id: userId, email: userEmail, _csrf: csrfValue};
 
         $.post(url, params, function (response) {
-            if (response == "OK") {
+            if (response === "OK") {
                 form.submit();
-            } else if (response == "Duplicated") {
+            } else if (response === "Duplicated") {
                 showModalDialog("There is another user having the email " + userEmail);
             } else {
                 showModalDialog("Unknown response from server");
