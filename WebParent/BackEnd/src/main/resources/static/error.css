@@ -1,0 +1,46 @@
+
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+    font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+    width: 100%;
+}
+
+.four_zero_four_bg_404 {
+    background-image: url(https://cdn.dribbble.com/users/1200451/screenshots/7193311/media/ab84f78895fd3792800645cac8cd216c.gif);
+    height: 700px;
+    background-position: center;
+}
+
+.four_zero_four_bg_403 {
+    background-image: url(https://cdn.dribbble.com/users/60145/screenshots/4080650/403.gif);
+    height: 400px;
+    background-position: center;
+}
+
+.four_zero_four_bg_500 {
+    background-image: url(https://cdn.dribbble.com/users/19381/screenshots/3471308/dribbble-500-animated.gif);
+    height: 400px;
+    background-position: center;
+}
+
+.four_zero_four_bg h1 {
+    font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 80px;
+}
+
+.link_404 {
+    color: #fff !important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;
+}
+
+/*.contant_box_404{margin-top:-50px;}*/
