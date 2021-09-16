@@ -3,10 +3,6 @@
 Spring modüllerini ve test yazmayı daha iyi kavrayabilmem için
 geliştirdiğim ve devamında başka projelerde kullanabileceğim şekilde
 tasarladığım kimlik doğrulama ve yetkilendirme sistemi projesi.
-## Ekler
-
-Herhangi bir ek bilgi buraya gelir
-
   
 ## Özellikler
 
