@@ -27,6 +27,29 @@ MySQL,  Spring Data JPA, Thymeleaf, Bootstrap 4, HTML5, jQuery 3, Bootstrap, Spr
   
 ## Ekran Görüntüleri
 
-![ScreenShot](/readmePhotos/1.png/)
+- Main Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/main%20page.PNG)
+- Edit User Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/edit%20user.PNG)
+- Login Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/login%20page.PNG)
+- New User Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/new%20user.PNG)
+- Users export excel
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/users%20excel%20output%20.PNG)
+- After change user details
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/after%20changes.PNG)
+- 404 Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/404.PNG)
+- 500 Page
+
+![ScreenShot](https://raw.githubusercontent.com/Mduzgunn/AdvAuth/master/readmePhotos/500.PNG)
 
   
